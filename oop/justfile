@@ -1,0 +1,8 @@
+build build_dir:
+    cmake -S . -B {{ build_dir }}/build && cmake --build {{ build_dir }}/build
+
+run build_dir:
+    just build {{ build_dir }} && echo 'Program started' && {{ build_dir }}/build/program
+
+clean build_dir:
+    rm -rf {{ build_dir }}/build
