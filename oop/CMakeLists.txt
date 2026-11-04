@@ -9,7 +9,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS
-     ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+       ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+       ${CMAKE_CURRENT_SOURCE_DIR}/*.h
+       ${CMAKE_CURRENT_SOURCE_DIR}/*.hpp)
 list(FILTER sources EXCLUDE REGEX "/(CMakeFiles|build)/")
 
 add_executable(program ${sources})
